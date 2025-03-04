@@ -2,6 +2,40 @@ import * as React from "react";
 import { SVGProps } from "react";
 import clsx from "clsx";
 
+export const ArrowDown = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={28}
+    height={29}
+    fill="none"
+    {...props}
+  >
+    <path
+      fill="#fff"
+      stroke="#fff"
+      strokeWidth={1.6}
+      d="m14.572 16.092-.566.566-.566-.566-4.526-4.526a.387.387 0 0 0-.53.003.362.362 0 0 0 .004.51l5.355 5.355a.362.362 0 0 0 .514 0l5.355-5.355a.362.362 0 0 0 0-.513.362.362 0 0 0-.514 0l-4.526 4.526Z"
+    />
+  </svg>
+);
+export const ArrowUp = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={28}
+    height={29}
+    fill="none"
+    {...props}
+  >
+    <path
+      stroke="#FAFAFA"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="m7 18 7-7 7 7"
+    />
+  </svg>
+);
+
 interface LoaderProps extends SVGProps<SVGSVGElement> {
   loading?: boolean;
 }

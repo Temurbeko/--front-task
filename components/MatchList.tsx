@@ -6,8 +6,8 @@ import { fetchMatches } from "@/lib/api";
 import { AllMatchStatus, Match } from "@/lib/types";
 import FilterControls from "./FilterControls";
 import MatchItem from "./MatchItem";
-import { Loader } from "@/public/loaders";
 import { useMatchesWebSocker } from "@/lib/hooks";
+import { Loader } from "./icons";
 
 export default function MatchList() {
   const [filter, setFilter] = useState<AllMatchStatus>("all");
@@ -34,7 +34,7 @@ export default function MatchList() {
     <div className="container m-auto mt-6 px-2 sm:px-0">
       <div className="block justify-between mb-4 sm:flex">
         <div className="sm:flex items-center justify-center gap-6 mb-1 sm:0">
-          <h1 className="font-[Tactic Sans] font-bold italic text-[32px] leading-[32px] tracking-[0%]  mb-1 sm:0">
+          <h1 className="font-[Tactic Sans] text-center font-bold italic text-[32px] leading-[32px] tracking-[0%]  mb-1 sm:0">
             Match Tracker
           </h1>
           <FilterControls setFilter={setFilter} activeFilter={filter} />
