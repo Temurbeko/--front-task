@@ -10,16 +10,16 @@ export default function MatchDetails({ match }: MatchDetailsProps) {
     <div className="mt-4 border-t border-gray-700 pt-4">
       <div></div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm sm:text-base">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm! sm:text-base">
         <div>
           <div className="flex flex-wrap gap-1.5">
             <div className="flex w-full gap-1.5">
               {match.homeTeam.players.map((player) => (
                 <div
                   key={player.username}
-                  className="flex flex-wrap flex-1 justify-between items-center bg-[#101318] p-2 sm:p-3 rounded-[4px]"
+                  className="flex flex-wrap sm:flex-nowrap flex-1 justify-between items-center bg-[#101318] p-2 sm:p-3 rounded-[4px]"
                 >
-                  <span className="flex items-center gap-1.5">
+                  <span className="flex items-center gap-1.5  max-w-[90px] overflow-x-hidden">
                     <img
                       className="size-5 sm:size-8"
                       alt="avatar"
@@ -54,12 +54,11 @@ export default function MatchDetails({ match }: MatchDetailsProps) {
               {match.awayTeam.players.map((player) => (
                 <div
                   key={player.username}
-                  className="flex flex-wrap flex-1 justify-between items-center bg-[#101318] p-2 sm:p-3 rounded-[4px]"
+                  className="flex flex-wrap sm:flex-nowrap flex-1 justify-between items-center bg-[#101318] p-2 sm:p-3 rounded-[4px]"
                 >
-                  <span className="flex items-center gap-1.5">
-                    <Image
-                      width={30}
-                      height={30}
+                  <span className="flex items-center gap-1.5  max-w-[90px] overflow-x-hidden">
+                    <img
+                      className="size-5 sm:size-8"
                       alt="avatar"
                       src={"/avatar_global.png"}
                     />
