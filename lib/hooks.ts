@@ -12,28 +12,14 @@ export const useMatchesWebSocker = () => {
       const message = JSON.parse(event.data);
       queryClient.setQueryData<Match[]>([QUERY_KEYS.get.matches], (oldData) => {
         if (!oldData) return oldData;
-        return oldData.map((match) => {
-          if (message.matchId !== match.time) return match;
-          if (message.type === "scoreUpdate") {
-            return {
-              ...match,
-              homeScore: message.homeScore,
-              awayScore: message.awayScore,
-            };
-          } else if (message.type === "event") {
-            return {
-              ...match,
-              events: [...(match.events || []), message.data],
-            };
-          } else if (message.type === "statusUpdate") {
-            return { ...match, status: message.status };
-          }
-          return match;
-        });
+        if (message.type === "update_matches") {
+          return message.data;
+        }
       });
     };
     return () => ws.close();
   }, [queryClient]);
+
   return useQuery({
     queryKey: [QUERY_KEYS.get.matches],
     queryFn: fetchMatches,

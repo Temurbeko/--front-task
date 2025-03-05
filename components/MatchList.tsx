@@ -30,6 +30,8 @@ export default function MatchList() {
       </div>
     );
 
+  console.log(matches);
+
   return (
     <div className="container m-auto mt-6 px-2 sm:px-0">
       <div className="block justify-between mb-4 sm:flex">
